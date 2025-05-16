@@ -1,0 +1,4 @@
+X initalize py in vs code
+- write and read txt.file
+- count how many lines ina txt.file
+- execute a fnc every lines

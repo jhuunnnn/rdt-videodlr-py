@@ -1,4 +1,7 @@
 X initalize py in vs code
-- write and read txt.file
-- count how many lines ina txt.file
-- execute a fnc every lines
+X write and read txt.file
+X count how many lines ina txt.file
+X execute a fnc every lines
+- make fnc to dl a video from video
+- deploy fnc RedditVL to the while loop
+- complie all video into one folder

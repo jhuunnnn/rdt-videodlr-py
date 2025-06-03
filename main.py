@@ -1,16 +1,15 @@
 import asyncio
 import yt_dlp
 
-
-    #reddit_video_url = 'https://packaged-media.redd.it/lbuak5x33a1f1/pb/m2-res_854p.mp4?m=DASHPlaylist.mpd&v=1&e=1747548000&s=85801ae818bf3162abf366528973afe5e331129e'
-
 # fnc to download reddit link
 async def download_reddit_video(url):
     print("starting downlooading....")
     ydl_opts = {
         "format":'bv*+ba/b',
         'outtmpl': 'outputVideos/%(title)s.%(ext)s',  # Save file as video title
-        'merge_output_format': 'mp4'     # Combine video and audio
+        'merge_output_format': 'mp4',     # Combine video and audio
+        'quiet':False,
+        'ignoreerrors':True
     }
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
         ydl.download([url])
@@ -25,13 +24,14 @@ def check_txtFiles(link):
         line_number=line_count
     if line_number >0:
         print(line_number)
-        print("link.txt is not empty")
+        print("provided link txt is  not empty")
         
     else:
-        print("link.txt is empty")
+        print("provided link txt is empty")
     
     return line_number
 
+# compile all links into a array 
 def compile_links(linkFile):
     arrayLinks=[]
     with open(linkFile,"r") as file:
@@ -40,19 +40,23 @@ def compile_links(linkFile):
    
     return arrayLinks
 
+
 async def main():
     current_Loop = 0
-    txtFiles_Link = "redditFiles/finalLink.txt"
+    txtFiles_Link = "link.txt"
     exit_Loop = check_txtFiles(txtFiles_Link)
     if exit_Loop >0:
         listOfLinks = compile_links(txtFiles_Link)
-     
+        
+        #perform the fnc download within the loop range of the list of links     
         while current_Loop < exit_Loop:
+            print(f'Current index {current_Loop} ')
             await download_reddit_video(listOfLinks[current_Loop])
-            print(listOfLinks[current_Loop])
-            print("new")
+            print(f'Done index,{current_Loop} ')
             current_Loop +=1
     else:
-        print("provide txt is empty")
+        print("exiting scripts")
+
+    print("Scripts completed")
 
 asyncio.run(main())

@@ -2,7 +2,8 @@ import yt_dlp
 
 def download_reddit_video(url):
     ydl_opts = {
-        'outtmpl': '%(title)s.%(ext)s',  # Save file as video title
+        "format":'bv*+ba/b',
+        'outtmpl': 'outputVideos/%(title)s.%(ext)s',  # Save file as video title
         'merge_output_format': 'mp4'     # Combine video and audio
     }
 
@@ -10,7 +11,7 @@ def download_reddit_video(url):
         ydl.download([url])
 
 # Example Reddit post URL
-reddit_video_url = 'https://packaged-media.redd.it/lbuak5x33a1f1/pb/m2-res_854p.mp4?m=DASHPlaylist.mpd&v=1&e=1747548000&s=85801ae818bf3162abf366528973afe5e331129e'
+reddit_video_url = 'https://www.reddit.com/r/funnyvideos/comments/1l1yxpz/im_in_when_we_going/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button'
 
  # replace with actual link
 download_reddit_video(reddit_video_url)

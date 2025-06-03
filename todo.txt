@@ -3,7 +3,9 @@ X write and read txt.file
 X count how many lines ina txt.file
 X execute a fnc every lines
 X make fnc to dl a video from video
-    - output the video in specfic path
-    - name the video through its content
-- deploy fnc RedditVL to the while loop
-- complie all video into one folder
+    X output the video in specfic path
+    Z name the video through its content
+X check first if the link.txt is not empty
+>>> redo dl py fnc fixed by instaliing ffmpeg to the system
+X deploy fnc RedditVL to the while loop
+X complie all video into one folder

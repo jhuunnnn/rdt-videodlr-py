@@ -27,7 +27,7 @@ Plus, I most used Javascript in programming and I want to explore and test some 
 2. Read a text file
 3. Count how many lines in a text file
 4. Execute a function every line
-5. Make fnc to dl a video from video
+5. Make fnc to dl a video from Reddit
    - Output the video in specific path
    - Name the video through its content
 6. Check first if the text file is not empty
@@ -48,3 +48,4 @@ Plus, I most used Javascript in programming and I want to explore and test some 
 
 1. filter the videos by their categories and download the video with a specfic folder for it
 2. get the top videos in a subreddit and download it automatically
+3. Make the program a application

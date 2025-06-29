@@ -6,7 +6,7 @@ async def download_reddit_video(url):
     print("starting downlooading....")
     ydl_opts = {
         "format":'bv*+ba/b',
-        'outtmpl': 'outputVideos/%(title)s.%(ext)s',  # Save file as video title
+        'outtmpl': 'outputVideos/friday/%(title)s.%(ext)s',  # Save file as video title #outputvideos/"folderName"
         'merge_output_format': 'mp4',     # Combine video and audio
         'quiet':False,
         'ignoreerrors':True
@@ -16,7 +16,7 @@ async def download_reddit_video(url):
     print("finish downlooading....")
 
 # fnc to check txt_files is empty or not   
-def check_txtFiles(link):
+def check_txtFiles(link)
     line_number = 0
     # count the lines of links in a txt files first
     with open(link, "r") as file:

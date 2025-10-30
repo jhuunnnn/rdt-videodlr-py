@@ -16,8 +16,8 @@ async def download_reddit_video(url):
     print("finish downlooading....")
 
 # fnc to check txt_files is empty or not   
-def check_txtFiles(link)
-    line_number = 0
+def check_txtFiles(link):
+    line_number = 0 
     # count the lines of links in a txt files first
     with open(link, "r") as file:
         line_count = sum(1 for line in file)

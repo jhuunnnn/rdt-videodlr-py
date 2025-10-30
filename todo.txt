@@ -9,3 +9,12 @@ X check first if the link.txt is not empty
 >>> redo dl py fnc fixed by instaliing ffmpeg to the system
 X deploy fnc RedditVL to the while loop
 X complie all video into one folder
+
+
+
+
+add todoList
+    ffmpeg as py module only to easier setup
+    update readMe
+    filter videos by folders category
+    Make the program a application has better ui

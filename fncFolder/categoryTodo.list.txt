@@ -1,0 +1,6 @@
+x run through txt file
+x set a warning if its a category
+	x make a folder
+		x save that videos in that folder
+			x create new folder if it's a new category
+				x then repeat

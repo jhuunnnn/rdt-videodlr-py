@@ -18,3 +18,25 @@ add todoList
     update readMe
     filter videos by folders category
     Make the program a application has better ui
+
+
+
+
+# return the url name to make folder
+# if it is a link, dl it and put to the specific folder
+# then if the next line is not a link, create a new folder out of it and it's name is base on it
+
+
+setCategory Todo List
+x run through txt file
+x set a warning if its a category
+	x make a folder
+		x save that videos in that folder
+			x create new folder if it's a new category
+				x then repeat
+
+apply the setCategory to the main fnc:
+
+1.apply mkdir if the line is not link
+    1.1 do dl function if the line is link and store it to the specific folder
+2. redo step 1 if the line is not link

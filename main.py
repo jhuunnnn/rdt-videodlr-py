@@ -3,17 +3,20 @@ import yt_dlp
 
 # fnc to download reddit link
 async def download_reddit_video(url):
-    print("starting downlooading....")
-    ydl_opts = {
-        "format":'bv*+ba/b',
-        'outtmpl': 'outputVideos/friday/%(title)s.%(ext)s',  # Save file as video title #outputvideos/"folderName"
-        'merge_output_format': 'mp4',     # Combine video and audio
-        'quiet':False,
-        'ignoreerrors':True
-    }
-    with yt_dlp.YoutubeDL(ydl_opts) as ydl:
-        ydl.download([url])
-    print("finish downlooading....")
+    try:
+        print("starting downlooading....")
+        ydl_opts = {
+            "format":'bv*+ba/b',
+            'outtmpl': 'outputVideos/friday/%(title)s.%(ext)s',  # Save file as video title #outputvideos/"folderName"
+            'merge_output_format': 'mp4',     # Combine video and audio
+            'quiet':False,
+            'ignoreerrors':False #set True if not using try and except statement
+        }
+        with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+            ydl.download([url])
+        print("finish downlooading....")
+    except Exception as e:
+        print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",e)
 
 # fnc to check txt_files is empty or not   
 def check_txtFiles(link):
@@ -43,7 +46,7 @@ def compile_links(linkFile):
 
 async def main():
     current_Loop = 0
-    txtFiles_Link = "link.txt"
+    txtFiles_Link = "fncFolder/testFile.txt"
     exit_Loop = check_txtFiles(txtFiles_Link)
     if exit_Loop >0:
         listOfLinks = compile_links(txtFiles_Link)

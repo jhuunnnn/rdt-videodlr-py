@@ -1,7 +1,7 @@
 import os
 
 # Open and read the file
-with open("hello.txt", "r") as file:
+with open("testFile.txt", "r") as file:
     lines = [line.strip() for line in file.readlines()]
 
 for i in lines:

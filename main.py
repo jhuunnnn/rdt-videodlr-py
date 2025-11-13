@@ -1,13 +1,14 @@
 import asyncio
 import yt_dlp
-
+import os
 # fnc to download reddit link
-async def download_reddit_video(url):
+async def download_reddit_video(url,surePath):
+
     try:
         print("starting downlooading....")
         ydl_opts = {
             "format":'bv*+ba/b',
-            'outtmpl': 'outputVideos/friday/%(title)s.%(ext)s',  # Save file as video title #outputvideos/"folderName"
+            'outtmpl': f'outputVideos/{surePath}/%(title)s.%(ext)s',  # Save file as video title #outputvideos/"folderName"
             'merge_output_format': 'mp4',     # Combine video and audio
             'quiet':False,
             'ignoreerrors':False #set True if not using try and except statement
@@ -52,10 +53,15 @@ async def main():
         listOfLinks = compile_links(txtFiles_Link)
         
         #perform the fnc download within the loop range of the list of links     
+        path_folder = ""
         while current_Loop < exit_Loop:
             print(f'Current index {current_Loop} ')
-            await download_reddit_video(listOfLinks[current_Loop])
-            print(f'Done index,{current_Loop} ')
+            if "reddit.com" in listOfLinks[current_Loop]:
+                await download_reddit_video(listOfLinks[current_Loop],path_folder)
+                print(f'Done index,{current_Loop} ')
+            else:
+                path_folder = listOfLinks[current_Loop]
+                print(f'Done index,{current_Loop} ')
             current_Loop +=1
     else:
         print("exiting scripts")

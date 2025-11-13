@@ -51,21 +51,22 @@ async def main():
     exit_Loop = check_txtFiles(txtFiles_Link)
     if exit_Loop >0:
         listOfLinks = compile_links(txtFiles_Link)
-        
-        #perform the fnc download within the loop range of the list of links     
+        # perform the fnc download within the loop range of the list of links     
         path_folder = ""
         while current_Loop < exit_Loop:
             print(f'Current index {current_Loop} ')
+            # deterime if the current index is not link of reddit or not
             if "reddit.com" in listOfLinks[current_Loop]:
                 await download_reddit_video(listOfLinks[current_Loop],path_folder)
                 print(f'Done index,{current_Loop} ')
             else:
+            # if not make a specific folder
                 path_folder = listOfLinks[current_Loop]
                 print(f'Done index,{current_Loop} ')
             current_Loop +=1
     else:
         print("exiting scripts")
-
+        
     print("Scripts completed")
 
 asyncio.run(main())

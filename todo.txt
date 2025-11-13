@@ -16,7 +16,7 @@ X complie all video into one folder
 add todoList
     ffmpeg as py module only to easier setup
     update readMe
-    filter videos by folders category
+    x filter videos by folders category
     Make the program a application has better ui
 
 

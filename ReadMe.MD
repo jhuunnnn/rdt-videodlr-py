@@ -33,6 +33,11 @@ Plus, I most used Javascript in programming and I want to explore and test some 
 6. Check first if the text file is not empty
 7. Deploy fnc RedditVL to the while loop
    - loop the fnc depending how many the lines of a text file
+8. Set a category folder for specific videos
+   - having trouble in path folder string template
+   - detect if the line is a link of reddit or not
+   - use "string example" in variable
+     - to determine links
 
 ##### Problems
 
@@ -47,5 +52,6 @@ Plus, I most used Javascript in programming and I want to explore and test some 
 #### Future Ideas
 
 1. filter the videos by their categories and download the video with a specfic folder for it
+   - done with this future ideas by 11/13/25
 2. get the top videos in a subreddit and download it automatically
 3. Make the program a application
